@@ -13,6 +13,7 @@ dir(csv)
 
 # Assign file to be opened
 file_to_open = os.path.join("Resources","election_results.csv")
+file_to_save = os.path.join("Analysis","candidate_results.txt")
 # Open the file
 total_votes = 0
 candidates = []
@@ -35,6 +36,12 @@ with open(file_to_open,'r') as election_data:
     print(total_votes)
     print(candidates)
     print(candidate_votes)
+
+with open(file_to_save,'w') as candidate_results_file:
+    candidate_results_file.write(f'Election Results\n'
+                                f'-------------------\n'
+                                f'Total Votes: {total_votes}\n'
+                                f'-------------------\n')
     winning_candidate = ""
     winning_vote_count = 0
     winning_percentage = 0
@@ -43,24 +50,21 @@ with open(file_to_open,'r') as election_data:
         vote_percentage = float(votes)/float(total_votes)*100
         # Percentage = "Percentage"
         # candidate_votes[Percentage[candidate_name]] = vote_percentage
-        print(f'{candidate_name}'
-                f'has {candidate_votes[candidate_name]}'
-                f' votes, which is {vote_percentage:.1f}% of the total votes')
+        candidate_results = (f'{candidate_name}'
+                            f' has {candidate_votes[candidate_name]}'
+                            f' votes, which is {vote_percentage:.1f}% of the total votes.\n')
+        print(candidate_results)
+        candidate_results_file.write(candidate_results)
         if votes > winning_vote_count:
             winning_vote_count = votes
             winning_percentage = vote_percentage
             winning_candidate = candidate_name
+    candidate_results_file.write("---------------------------------\n")
     winning_candidate_summary = (f'---------------------\n'
                                 f'Winner: {winning_candidate}\n'
                                 f'Winning Vote Count: {winning_vote_count:,}\n'
                                 f'Winning Percentage: {winning_percentage:.1f}%\n'
                                 f'----------------------\n')
     print(winning_candidate_summary)
-    
+    candidate_results_file.write(winning_candidate_summary)
 
-
-file_to_save = os.path.join("Analysis","election_results.txt")
-with open(file_to_save,'w') as analysis_file:
-    analysis_file.write("Counties in the Election\n"
-    f'----------------------\n')
-    analysis_file.write("Arapahoe, Denver, Jefferson")
