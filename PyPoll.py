@@ -48,8 +48,7 @@ with open(file_to_save,'w') as candidate_results_file:
     for candidate_name in candidate_votes:
         votes = candidate_votes[candidate_name]
         vote_percentage = float(votes)/float(total_votes)*100
-        # Percentage = "Percentage"
-        # candidate_votes[Percentage[candidate_name]] = vote_percentage
+        # candidate_votes["Percentage"]["Candidate"] = round(vote_percentage,1)
         candidate_results = (f'{candidate_name}'
                             f' has {candidate_votes[candidate_name]}'
                             f' votes, which is {vote_percentage:.1f}% of the total votes.\n')
