@@ -25,6 +25,7 @@ with open(file_to_open,'r') as election_data:
             counties.append(county_name)
             county_turnouts_dict[county_name] = 0
         county_turnouts_dict[county_name] += 1
+# Ignore: personal testing
     # for i in range(len(counties)):
     #     county_turnouts_dict["Counties"[counties[i]]] = counties[i]
 
@@ -54,7 +55,6 @@ with open(file_to_save,'w') as election_results:
     for candidate_name in candidate_votes:
         votes = candidate_votes[candidate_name]
         vote_percentage = float(votes)/float(total_votes)*100
-        # candidate_votes["Percentage"]["Candidate"] = round(vote_percentage,1)
         candidate_results = (f'Candidate: {candidate_name}: '
                                 f'{vote_percentage:.1f}% '
                                 f'({candidate_votes[candidate_name]:,})\n')
