@@ -16,7 +16,7 @@ A Colorado Board of Elections employee has given me the following tasks to compl
 1. Jefferson
 2. Denver
 3. Arapahoe
-![Code for county list]https://github.com/coocoojames/Election_Analysis/blob/main/Resources/Screenshot3.png)
+![Code for county list](https://github.com/coocoojames/Election_Analysis/blob/main/Resources/Screenshot3.png)
 ### County Votes:
 - Jefferson:
     - 10.5% of total votes
