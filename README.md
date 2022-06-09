@@ -1,4 +1,5 @@
 # Election Analysis
+To analyze correlation between counties and election results.
 ## Project Purpose
 A Colorado Board of Elections employee has given me the following tasks to complete the election audit of a recent local congressional election. The puspose of the project is to:
     1. Analyze the results of each candidate in each county.
